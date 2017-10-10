@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import bindActionCreators from 'react-redux'
+import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions';
 
 import _ from 'lodash';
@@ -24,7 +25,12 @@ renderPosts() {
 render() {
     console.log(this.props.posts)
   return (
-    <div>
+      <div>
+      <div className="text-xs-right">
+      <Link className="btn btn-primary" to="/posts/new">
+      Add a post
+      </Link>
+      </div>  
       <h3>Posts</h3>
       <ul>
       {this.renderPosts()}
